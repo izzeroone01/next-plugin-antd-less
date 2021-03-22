@@ -135,7 +135,7 @@ module.exports = (
 function handleAntdInServer(config, options) {
   if (!options.isServer) return config;
 
-  const ANTD_STYLE_REGX = /antd\/.*?\/style.*?/;
+  const ANTD_STYLE_REGX = /(antd\/.*?\/style).*(?<![.]js)$/;
   const rawExternals = [...config.externals];
 
   config.externals = [
